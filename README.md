@@ -15,6 +15,8 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 
 ```js
 grunt.loadNpmTasks('grunt-openapi-generate');
+
+grunt.registerTask('openapi', ['openapi_generate']);
 ```
 
 ## The "openapi_generate" task
@@ -26,10 +28,11 @@ In your project's Gruntfile, add a section named `openapi_generate` to the data 
 grunt.initConfig({
   openapi_generate: {
     options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+      title: 'This is a generated OpenAPI file', // Optional, will default to text as printed here.
+      version: '1.0.0', // Optional, defaults to 1.0.0
+      openapiVersion: '3.0.1', // Optional, defaults to 3.0.1
+      apis: [], // Contains a list of directories and/or files to scan for @swagger tags.
+      destination: 'target/openapi.json' // Location where resulting OpenApi file is placed
     },
   },
 });
@@ -37,46 +40,16 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
 ### Usage Examples
 
-#### Default Options
 In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
   openapi_generate: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  openapi_generate: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      title: 'Example Update API',
+      apis:  ['src/**/*.js'],
     },
   },
 });
