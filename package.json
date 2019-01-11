@@ -1,0 +1,45 @@
+{
+  "name": "grunt-openapi-generate",
+  "description": "Generates openapi file using JDoc like comments",
+  "version": "0.1.0",
+  "homepage": "https://github.com/soverbosch/grunt-openapi-generate",
+  "author": {
+    "name": "Sarris Overbosch",
+    "email": "soverbosch@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soverbosch/grunt-openapi-generate"
+  },
+  "bugs": {
+    "url": "https://github.com/soverbosch/grunt-openapi-generate/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/soverbosch/grunt-openapi-generate/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 11.0.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "swagger-jsdoc": "^3.2.6",
+    "semver": "^5.6.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "^1.0.0"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
