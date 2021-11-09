@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             apis: options.apis
         };
 
-        grunt.log.warn(JSON.stringify(swaggerOptions));
+        //grunt.log.warn(JSON.stringify(swaggerOptions));
         const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
         var swaggerOutputFile = path.normalize(path.join(options.destination));
